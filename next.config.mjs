@@ -1,4 +1,3 @@
-// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -13,6 +12,8 @@ const nextConfig = {
       },
     ],
   },
+  // Add this line for static export
+  output: "export",
 };
 
 export default nextConfig;
