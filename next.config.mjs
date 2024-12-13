@@ -12,10 +12,7 @@ const nextConfig = {
       },
     ],
   },
-  // Remove experimental setting for testing
-  // experimental: {
-  //   appDir: true,
-  // },
+  // If you're not using appDir, leave the experimental object out
 };
 
 export default nextConfig;
