@@ -12,7 +12,9 @@ const nextConfig = {
       },
     ],
   },
-  // If you're not using appDir, leave the experimental object out
+  experimental: {
+    turbopack: false,  // This will disable Turbopack
+  },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
