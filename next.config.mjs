@@ -12,10 +12,10 @@ const nextConfig = {
       },
     ],
   },
-  experimental: {
-    appDir: true, // Ensure App Router is enabled
-  },
-  // We no longer use `output: export`
+  // Remove experimental setting for testing
+  // experimental: {
+  //   appDir: true,
+  // },
 };
 
 export default nextConfig;
