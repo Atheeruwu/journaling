@@ -15,4 +15,4 @@ const nextConfig = {
   // If you're not using appDir, leave the experimental object out
 };
 
-export default nextConfig;
+module.exports = nextConfig;
