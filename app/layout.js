@@ -13,23 +13,19 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // Fetch environment variables
+  const clerkFrontendApi = process.env.NEXT_PUBLIC_CLERK_FRONTEND_API;
+  const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+
+  // Check if the environment variables are available
+  if (!clerkFrontendApi || !publishableKey) {
+    return <p>Missing Clerk configuration</p>;
+  }
+
   return (
     <ClerkProvider
-    // appearance={{
-    //   baseTheme: shadesOfPurple,
-    //   variables: {
-    //     colorPrimary: "#3b82f6",
-    //     colorBackground: "#1a202c",
-    //     colorInputBackground: "#2D3748",
-    //     colorInputText: "#F3F4F6",
-    //   },
-    //   elements: {
-    //     formButtonPrimary: "bg-purple-600 hover:bg-purple-700 text-white",
-    //     card: "bg-gray-800",
-    //     headerTitle: "text-blue-400",
-    //     headerSubtitle: "text-gray-400",
-    //   },
-    // }}
+      frontendApi={clerkFrontendApi}  // Adding frontendApi from environment variables
+      publishableKey={publishableKey}  // Adding publishableKey from environment variables
     >
       <html lang="en">
         <body
