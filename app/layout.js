@@ -16,16 +16,17 @@ export default function RootLayout({ children }) {
   // Fetch environment variables
   const clerkFrontendApi = process.env.NEXT_PUBLIC_CLERK_FRONTEND_API;
   const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+  const clerkSecretKey = process.env.CLERK_SECRET_KEY; // New addition
 
-  // Check if the environment variables are available
-  if (!clerkFrontendApi || !publishableKey) {
+  // Check if the required environment variables are available
+  if (!clerkFrontendApi || !publishableKey || !clerkSecretKey) {
     return <p>Missing Clerk configuration</p>;
   }
 
   return (
     <ClerkProvider
-      frontendApi={clerkFrontendApi}  // Adding frontendApi from environment variables
-      publishableKey={publishableKey}  // Adding publishableKey from environment variables
+      frontendApi={clerkFrontendApi} // From environment variables
+      publishableKey={publishableKey} // From environment variables
     >
       <html lang="en">
         <body
